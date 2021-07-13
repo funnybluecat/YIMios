@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - YIMios (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - YIMios (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  YIMios:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  YIMios: a165a077a232445c78609dba22e3c7e86a3e0c1d
+
+PODFILE CHECKSUM: 89174e85eede597c36ebe0ace30e4d27589ff7cc
+
+COCOAPODS: 1.10.1

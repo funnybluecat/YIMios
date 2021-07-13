@@ -1,0 +1,6 @@
+framework module Pods_YIMios_Example {
+  umbrella header "Pods-YIMios_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

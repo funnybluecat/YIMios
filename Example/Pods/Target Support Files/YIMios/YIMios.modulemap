@@ -1,0 +1,6 @@
+framework module YIMios {
+  umbrella header "YIMios-umbrella.h"
+
+  export *
+  module * { export * }
+}
