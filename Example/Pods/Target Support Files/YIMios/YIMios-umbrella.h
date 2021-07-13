@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "Tesss.h"
 
 FOUNDATION_EXPORT double YIMiosVersionNumber;
 FOUNDATION_EXPORT const unsigned char YIMiosVersionString[];

@@ -7,7 +7,8 @@
 //
 
 #import "YLViewController.h"
-
+#import  <Masonry/Masonry.h>
+#import <YIMios/Tesss.h>
 @interface YLViewController ()
 
 @end
@@ -17,6 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [Tesss strdss];
+    
+    NSLog(@"%@",[Tesss strdss]);
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

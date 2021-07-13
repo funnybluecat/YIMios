@@ -11,5 +11,5 @@
 @interface YLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
++(NSString *)strdss;
 @end

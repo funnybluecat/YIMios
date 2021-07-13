@@ -18,5 +18,19 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "YIMios/Classes/**/*"
+  "source_files": "YIMios/Classes/**/*",
+  "dependencies": {
+    "CocoaAsyncSocket": [
+
+    ],
+    "MJRefresh": [
+
+    ],
+    "MJExtension": [
+
+    ],
+    "Masonry": [
+
+    ]
+  }
 }
