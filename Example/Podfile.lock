@@ -7,12 +7,10 @@ PODS:
     - FBSnapshotTestCase/Core
   - Masonry (1.1.0)
   - MJExtension (3.3.0)
-  - MJRefresh (3.7.1)
-  - YIMios (0.1.0):
+  - YIMios (1.0.2):
     - CocoaAsyncSocket
     - Masonry
     - MJExtension
-    - MJRefresh
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -24,7 +22,6 @@ SPEC REPOS:
     - FBSnapshotTestCase
     - Masonry
     - MJExtension
-    - MJRefresh
 
 EXTERNAL SOURCES:
   YIMios:
@@ -35,8 +32,7 @@ SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
-  MJRefresh: c7f1edbaa1f401810f2dc356de2355f68c78d4ca
-  YIMios: b4444441a20bae036860da2a8d84cb9af2232b6e
+  YIMios: c59267dc2f79a0971b655ea19bd8988c948e4f3a
 
 PODFILE CHECKSUM: 89174e85eede597c36ebe0ace30e4d27589ff7cc
 
