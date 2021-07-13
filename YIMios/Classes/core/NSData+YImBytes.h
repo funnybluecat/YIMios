@@ -1,5 +1,5 @@
 //
-//  TestHahaha.h
+//  NSData+YImBytes.h
 //  YIMios
 //
 //  Created by yan on 2021/7/13.
@@ -9,8 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestHahaha : NSObject
-
+@interface NSData (YImBytes)
++(NSData *)intToData:(int) num;
 @end
 
 NS_ASSUME_NONNULL_END
