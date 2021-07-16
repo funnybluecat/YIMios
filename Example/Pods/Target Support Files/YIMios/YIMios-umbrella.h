@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "NSData+YImBytes.h"
 #import "Tesss.h"
 
 FOUNDATION_EXPORT double YIMiosVersionNumber;

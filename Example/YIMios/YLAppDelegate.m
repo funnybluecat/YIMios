@@ -8,10 +8,19 @@
 
 #import "YLAppDelegate.h"
 
+
+
+
 @implementation YLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [[YIMConfig getInstance] initWithAppKey:@"sss" secret:@"eee" host:@"server.natappfree.cc" prot:35672];
+    
+    [[YIMConfig getInstance] setDelegate:self];
+    
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -41,6 +50,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)LogOutByService {
+    
+}
+
+- (void)LoginCallBack:(NSInteger)code message:(nonnull NSString *)status {
+    
+}
+
+- (void)reciveNewMessage:(nonnull YIMMessageResponseCustome *)message {
+    NSLog(@"搜到新消息");
 }
 
 @end

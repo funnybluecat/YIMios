@@ -4,6 +4,8 @@ platform :ios, '9.0'
 
 target 'YIMios_Example' do
   pod 'YIMios', :path => '../'
+  
+  pod 'IQKeyboardManager'
 
   target 'YIMios_Tests' do
     inherit! :search_paths

@@ -18,5 +18,21 @@
     
     return adddata;
 }
+
+
++ (int) intFromData:(NSData *)data
+{
+    int intSize = sizeof(int); // change it to fixe length
+    unsigned char * buffer = malloc(intSize * sizeof(unsigned char));
+    [data getBytes:buffer length:intSize];
+    int num = 0;
+    for (int i = 0; i < intSize; i++) {
+        num = (num << 8) + buffer[i];
+    }
+    free(buffer);
+    return num;
+}
+
+
 @end
 

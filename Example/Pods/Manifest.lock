@@ -5,23 +5,29 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
+  - IQKeyboardManager (6.5.6)
   - Masonry (1.1.0)
   - MJExtension (3.3.0)
-  - YIMios (1.0.2):
+  - MJRefresh (3.7.1)
+  - YIMios (1.0.4):
     - CocoaAsyncSocket
     - Masonry
     - MJExtension
+    - MJRefresh
 
 DEPENDENCIES:
   - FBSnapshotTestCase
+  - IQKeyboardManager
   - YIMios (from `../`)
 
 SPEC REPOS:
   trunk:
     - CocoaAsyncSocket
     - FBSnapshotTestCase
+    - IQKeyboardManager
     - Masonry
     - MJExtension
+    - MJRefresh
 
 EXTERNAL SOURCES:
   YIMios:
@@ -30,10 +36,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
-  YIMios: c59267dc2f79a0971b655ea19bd8988c948e4f3a
+  MJRefresh: c7f1edbaa1f401810f2dc356de2355f68c78d4ca
+  YIMios: 69c6052da94e08f39522320f1be2e11089316c1d
 
-PODFILE CHECKSUM: 89174e85eede597c36ebe0ace30e4d27589ff7cc
+PODFILE CHECKSUM: c0e1b778ee4f0e4f23f7b57f6890c17ccec9e746
 
 COCOAPODS: 1.10.1

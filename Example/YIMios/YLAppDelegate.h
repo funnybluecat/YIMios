@@ -7,9 +7,9 @@
 //
 
 @import UIKit;
-
-@interface YLAppDelegate : UIResponder <UIApplicationDelegate>
+#import "YIMConfig.h"
+@interface YLAppDelegate : UIResponder <UIApplicationDelegate,YIMConfigDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-+(NSString *)strdss;
+
 @end

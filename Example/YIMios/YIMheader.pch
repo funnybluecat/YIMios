@@ -1,0 +1,29 @@
+//
+//  YIMheader.pch
+//  YIMios
+//
+//  Created by yan on 2021/7/14.
+//  Copyright © 2021 yan. All rights reserved.
+//
+
+#ifndef YIMheader_pch
+#define YIMheader_pch
+
+
+//NSUserDefaults
+#define UserDefaultSetObjectForKey(__VALUE__,__KEY__) \
+{\
+[[NSUserDefaults standardUserDefaults] setObject:__VALUE__ forKey:__KEY__];\
+[[NSUserDefaults standardUserDefaults] synchronize];\
+}
+#define YIM_AUTHORIZATION_KEY @"authToken"
+/**
+ *  get the saved objects       获得存储的对象
+ */
+#define UserDefaultObjectForKey(__KEY__)  [[NSUserDefaults standardUserDefaults] objectForKey:__KEY__]
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Masonry/Masonry.h>
+
+#endif /* YIMheader_pch */
