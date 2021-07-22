@@ -65,33 +65,36 @@ static int const Retry_count = 10; // 重试次数
 
  //localhost:8080/im-server/auth/getToken?appKey=1111&appSecret=33333&uid=token678&nickName=jaha&avatar=3423423
     
-    NSMutableDictionary * params = [NSMutableDictionary dictionary];
-    params[@"appKey"] = self.appkey;
-    params[@"appSecret"] = self.secret;
-    params[@"uid"] =uid;
-    params[@"nickName"] =uid;
-    params[@"avatar"] =uid;
+//    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+//    params[@"appKey"] = self.appkey;
+//    params[@"appSecret"] = self.secret;
+//    params[@"uid"] =uid;
+//    params[@"nickName"] =uid;
+//    params[@"avatar"] =uid;
+//    
+//    
+//    [HttpClientManager getAsyn:@"http://ewhyi4.natappfree.cc/im-server/auth/getToken" params:params success:^(id json) {
+//       
+//        
+//        
+//        
+//        if ([json[@"code"] intValue] ==200) {
+//        
+//        //登录成功后 执行连接
+//        UserDefaultSetObjectForKey(json[@"data"],YIM_AUTHORIZATION_KEY);
+//        [self connectSocket];
+//        }
+//        
+//    } failure:^(NSError *error) {
+//        
+//        NSLog(@"%@",error);
+//        
+//    }];
+//
+    UserDefaultSetObjectForKey(@"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJva2VuNjc4Iiwibmlja05hbWUiOiJhZG1pbiIsImFwcElkIjoxLCJhdmF0YXIiOiJodHRwOi8vaW1hZ2UuYmlhb2JhaWp1LmNvbS91cGxvYWRzLzIwMTkxMTA1LzExLzE1NzI5MjU4MTMtRlJwVGNiUEt6TC5qcGciLCJleHAiOjE2MjcwMzg4NDd9.Mr2rhrNyKBbppopC99gwFAQ0uO0BsZIrxVyoZ1lbWLQ",YIM_AUTHORIZATION_KEY);
     
-    
-    [HttpClientManager getAsyn:@"http://ewhyi4.natappfree.cc/im-server/auth/getToken" params:params success:^(id json) {
-       
-        
-        
-        
-        if ([json[@"code"] intValue] ==200) {
-        
-        //登录成功后 执行连接
-        UserDefaultSetObjectForKey(json[@"data"],YIM_AUTHORIZATION_KEY);
-        [self connectSocket];
-        }
-        
-    } failure:^(NSError *error) {
-        
-        NSLog(@"%@",error);
-        
-    }];
-    
-    
+//    UserDefaultSetObjectForKey(@"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJ0b2tlbiIsIm5pY2tOYW1lIjoidG9rZW4iLCJhcHBJZCI6MSwiYXZhdGFyIjoiaHR0cHM6Ly9pbWcyLmJhaWR1LmNvbS9pdC91PTM3NDM4MDg2OTcsMTMxNzM1NTc3MiZmbT0yNiZmbXQ9YXV0byZncD0wLmpwZyIsImV4cCI6MTYyNzAzNDAxMH0.N9StkNKjjDakK7G4EXZ7DH3JzrzEoctoSjeUqT08DhU",YIM_AUTHORIZATION_KEY);
+    [self connectSocket];
   
     
 }
@@ -120,7 +123,7 @@ static int const Retry_count = 10; // 重试次数
     NSLog(@"====>写入成功,是否连接失败:====>%d",self.clientSocket.isDisconnected);
     
     
-    [self.clientSocket readDataToLength:24 withTimeout:-1 tag:1];
+   // [self.clientSocket readDataToLength:24 withTimeout:-1 tag:1];
     
   //  [self.clientSocket readDataWithTimeout:-1 tag:100];
     
@@ -142,10 +145,11 @@ static int const Retry_count = 10; // 重试次数
     
  
     
-    NSData * bodyLengthData =   [data subdataWithRange:NSMakeRange(20, 4)];
-    int length =  [NSData intFromData:bodyLengthData];
+    
     
     if (tag ==1) {
+        NSData * bodyLengthData =   [data subdataWithRange:NSMakeRange(20, 4)];
+        int length =  [NSData intFromData:bodyLengthData];
         [self.reciveMessageData appendData:data];
         
         
@@ -154,9 +158,10 @@ static int const Retry_count = 10; // 重试次数
     }else{
         [self.reciveMessageData appendData:data];
         
+        
         [self dealReviceMessageData:[NSData dataWithData:self.reciveMessageData]];
          
-         
+        self.reciveMessageData = [NSMutableData data];
       
         
         [self.clientSocket readDataToLength:24 withTimeout:-1 tag:1];
@@ -169,7 +174,7 @@ static int const Retry_count = 10; // 重试次数
     
   
   
-    [self.clientSocket readDataWithTimeout:-1 tag:100];
+   
     
 }
 
@@ -182,7 +187,7 @@ static int const Retry_count = 10; // 重试次数
     // 处理消息
     //获取消息类型
     
-    self.reciveMessageData = [NSMutableData data];
+ 
     
     NSData * chatTypeData =   [reciveMessageData subdataWithRange:NSMakeRange(12, 4)];
     
@@ -241,9 +246,18 @@ static int const Retry_count = 10; // 重试次数
     message.messageType = YIMMESSAGETYPECOMMON;
     message.messageContentType = YIMMESSAGECONTENTTEXT;
     message.fromUid= @"token";
-    message.toUid = @"token2";
+    message.toUid = @"oken678";
+//     message.fromUid= @"oken678";
+//     message.toUid = @"token";
+    
     message.content = text;
     [self getMessageDataWitExtData:extData hMessageBody:message];
+    
+    
+    if (self.delegate) {
+        [self.delegate sendNewMessage:message];
+    }
+    
     
 }
 /**
@@ -254,6 +268,7 @@ static int const Retry_count = 10; // 重试次数
     [verityData appendData:[NSData intToData:YIMCHATVERITY]];
     [verityData appendData:[NSData intToData:YIMMESSAGETYPECOMMON]];
     [self getMessageDataWitExtData:verityData hMessageBody:[[YIMMessageBuild getInstance] getVerityMessageWithtoken:UserDefaultObjectForKey(YIM_AUTHORIZATION_KEY)]];
+    [self.clientSocket readDataToLength:24 withTimeout:-1 tag:1];
 }
 
 /**
@@ -269,7 +284,10 @@ static int const Retry_count = 10; // 重试次数
        [messageData appendData:lengthData];
        //数据
        [messageData appendData:contentData];
-    [self.clientSocket writeData:messageData withTimeout:10 tag:GCDRECIVEMESSAGEHEAD];
+    
+    
+    //[self.clientSocket writeData:<#(nullable NSData *)#> withTimeout:<#(NSTimeInterval)#> tag:<#(long)#>]
+    [self.clientSocket writeData:messageData withTimeout:10 tag:3];
 }
 -(void)logOut{
     

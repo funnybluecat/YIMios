@@ -70,11 +70,26 @@
     
     YIMMessageRequestBase * result = (YIMMessageRequestBase *) message;
     self.nickNameLabel.text =result.fromNickName;
-    self.contentLabel.text =result.content;
+    self.contentLabel.text =[self changeEmo:result.content];
+    
     
     
     [self.avatar sd_setImageWithURL: [NSURL URLWithString:result.fromAvatar]];
     
+}
+
+
+-(NSString *)changeEmo:(NSString *) str{
+    
+    
+    NSData *data = [str dataUsingEncoding:NSNonLossyASCIIStringEncoding];
+    NSString *valueUnicode = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+
+    NSData *dataa = [valueUnicode dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *valueEmoj = [[NSString alloc] initWithData:dataa encoding:NSNonLossyASCIIStringEncoding];
+
+    return valueEmoj;
 }
 
 @end

@@ -17,7 +17,7 @@
 {
     //@"server.natappfree.cc"
     
-    [[YIMConfig getInstance] initWithAppKey:@"1111" secret:@"33333" host:@"server.natappfree.cc" prot:46144];
+    [[YIMConfig getInstance] initWithAppKey:@"1111" secret:@"33333" host:@"server.natappfree.cc" prot:45141];
     
    
     
