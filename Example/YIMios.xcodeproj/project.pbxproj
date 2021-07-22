@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2E26C026A6A3090027EB03 /* DKSMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E26B626A6A3090027EB03 /* DKSMoreView.m */; };
+		2C2E26C126A6A3090027EB03 /* UIView+FrameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E26B826A6A3090027EB03 /* UIView+FrameTool.m */; };
+		2C2E26C226A6A3090027EB03 /* DKSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E26BB26A6A3090027EB03 /* DKSTextView.m */; };
+		2C2E26C326A6A3090027EB03 /* DKSEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E26BD26A6A3090027EB03 /* DKSEmojiView.m */; };
+		2C2E26C426A6A3090027EB03 /* DKSKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E26BF26A6A3090027EB03 /* DKSKeyboardView.m */; };
+		2C2E26C826A6BD410027EB03 /* HttpClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E26C726A6BD410027EB03 /* HttpClientManager.m */; };
 		2C44BA0E269EB4EF000DE56E /* YIMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C44BA0C269EB4EF000DE56E /* YIMConfig.m */; };
 		2C44BA14269EB608000DE56E /* NSData+YImBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C44BA12269EB608000DE56E /* NSData+YImBytes.m */; };
 		2C44BA17269EBB35000DE56E /* YIMMessageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C44BA16269EBB35000DE56E /* YIMMessageBase.m */; };
@@ -18,6 +24,8 @@
 		2CA6EA3D26A120A200C78B0C /* YIMMessageResponseBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6EA3C26A120A200C78B0C /* YIMMessageResponseBase.m */; };
 		2CA6EA4026A120E000C78B0C /* YIMMessageResponseCustome.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6EA3F26A120E000C78B0C /* YIMMessageResponseCustome.m */; };
 		2CA6EA4926A129F500C78B0C /* YIMMessageCellBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6EA4826A129F500C78B0C /* YIMMessageCellBase.m */; };
+		2CB6017F26A5550800AC196A /* YIMMessageCellRecive.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6017E26A5550800AC196A /* YIMMessageCellRecive.m */; };
+		2CB6018526A57B8100AC196A /* YIMMessageCellSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6018426A57B8100AC196A /* YIMMessageCellSend.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -48,6 +56,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C2E26B626A6A3090027EB03 /* DKSMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKSMoreView.m; sourceTree = "<group>"; };
+		2C2E26B726A6A3090027EB03 /* DKSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKSTextView.h; sourceTree = "<group>"; };
+		2C2E26B826A6A3090027EB03 /* UIView+FrameTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameTool.m"; sourceTree = "<group>"; };
+		2C2E26B926A6A3090027EB03 /* DKSEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKSEmojiView.h; sourceTree = "<group>"; };
+		2C2E26BA26A6A3090027EB03 /* DKSKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKSKeyboardView.h; sourceTree = "<group>"; };
+		2C2E26BB26A6A3090027EB03 /* DKSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKSTextView.m; sourceTree = "<group>"; };
+		2C2E26BC26A6A3090027EB03 /* DKSMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKSMoreView.h; sourceTree = "<group>"; };
+		2C2E26BD26A6A3090027EB03 /* DKSEmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKSEmojiView.m; sourceTree = "<group>"; };
+		2C2E26BE26A6A3090027EB03 /* UIView+FrameTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameTool.h"; sourceTree = "<group>"; };
+		2C2E26BF26A6A3090027EB03 /* DKSKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKSKeyboardView.m; sourceTree = "<group>"; };
+		2C2E26C626A6BD410027EB03 /* HttpClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClientManager.h; sourceTree = "<group>"; };
+		2C2E26C726A6BD410027EB03 /* HttpClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClientManager.m; sourceTree = "<group>"; };
 		2C44BA0C269EB4EF000DE56E /* YIMConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YIMConfig.m; sourceTree = "<group>"; };
 		2C44BA0D269EB4EF000DE56E /* YIMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YIMConfig.h; sourceTree = "<group>"; };
 		2C44BA12269EB608000DE56E /* NSData+YImBytes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+YImBytes.m"; path = "../../YIMios/Classes/core/NSData+YImBytes.m"; sourceTree = "<group>"; };
@@ -71,6 +91,10 @@
 		2CA6EA3F26A120E000C78B0C /* YIMMessageResponseCustome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIMMessageResponseCustome.m; sourceTree = "<group>"; };
 		2CA6EA4726A129F500C78B0C /* YIMMessageCellBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIMMessageCellBase.h; sourceTree = "<group>"; };
 		2CA6EA4826A129F500C78B0C /* YIMMessageCellBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIMMessageCellBase.m; sourceTree = "<group>"; };
+		2CB6017D26A5550800AC196A /* YIMMessageCellRecive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIMMessageCellRecive.h; sourceTree = "<group>"; };
+		2CB6017E26A5550800AC196A /* YIMMessageCellRecive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIMMessageCellRecive.m; sourceTree = "<group>"; };
+		2CB6018326A57B8100AC196A /* YIMMessageCellSend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIMMessageCellSend.h; sourceTree = "<group>"; };
+		2CB6018426A57B8100AC196A /* YIMMessageCellSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIMMessageCellSend.m; sourceTree = "<group>"; };
 		3B6C80D7AFEEFBF75D955E2A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		46D763F22D8A3B52AE80075F /* Pods-YIMios_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YIMios_Example.debug.xcconfig"; path = "Target Support Files/Pods-YIMios_Example/Pods-YIMios_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		578F2A5BCC85FFAF01418812 /* Pods-YIMios_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YIMios_Example.release.xcconfig"; path = "Target Support Files/Pods-YIMios_Example/Pods-YIMios_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,9 +153,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C2E26B526A6A3090027EB03 /* DKSKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				2C2E26B626A6A3090027EB03 /* DKSMoreView.m */,
+				2C2E26B726A6A3090027EB03 /* DKSTextView.h */,
+				2C2E26B826A6A3090027EB03 /* UIView+FrameTool.m */,
+				2C2E26B926A6A3090027EB03 /* DKSEmojiView.h */,
+				2C2E26BA26A6A3090027EB03 /* DKSKeyboardView.h */,
+				2C2E26BB26A6A3090027EB03 /* DKSTextView.m */,
+				2C2E26BC26A6A3090027EB03 /* DKSMoreView.h */,
+				2C2E26BD26A6A3090027EB03 /* DKSEmojiView.m */,
+				2C2E26BE26A6A3090027EB03 /* UIView+FrameTool.h */,
+				2C2E26BF26A6A3090027EB03 /* DKSKeyboardView.m */,
+			);
+			path = DKSKeyBoard;
+			sourceTree = "<group>";
+		};
+		2C2E26C526A6BD1C0027EB03 /* net */ = {
+			isa = PBXGroup;
+			children = (
+				2C2E26C626A6BD410027EB03 /* HttpClientManager.h */,
+				2C2E26C726A6BD410027EB03 /* HttpClientManager.m */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
 		2C44BA0B269EB4E5000DE56E /* config */ = {
 			isa = PBXGroup;
 			children = (
+				2C2E26C526A6BD1C0027EB03 /* net */,
+				2C2E26B526A6A3090027EB03 /* DKSKeyBoard */,
 				2CA6EA4626A129C600C78B0C /* view */,
 				2C44BA18269EBBD0000DE56E /* model */,
 				2C44BA0D269EB4EF000DE56E /* YIMConfig.h */,
@@ -168,6 +220,10 @@
 			children = (
 				2CA6EA4726A129F500C78B0C /* YIMMessageCellBase.h */,
 				2CA6EA4826A129F500C78B0C /* YIMMessageCellBase.m */,
+				2CB6017D26A5550800AC196A /* YIMMessageCellRecive.h */,
+				2CB6017E26A5550800AC196A /* YIMMessageCellRecive.m */,
+				2CB6018326A57B8100AC196A /* YIMMessageCellSend.h */,
+				2CB6018426A57B8100AC196A /* YIMMessageCellSend.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -409,20 +465,24 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YIMios_Example/Pods-YIMios_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/YIMios/YIMios.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YIMios.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2E26C226A6A3090027EB03 /* DKSTextView.m in Sources */,
 				2CA6EA4026A120E000C78B0C /* YIMMessageResponseCustome.m in Sources */,
 				2C44BA1B269EC318000DE56E /* YIMMessageBuild.m in Sources */,
 				2C44BA2C269EECE6000DE56E /* YIMMessageRequestBase.m in Sources */,
@@ -484,12 +545,19 @@
 				6003F5A7195388D20070C39A /* YLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				2CA6EA4926A129F500C78B0C /* YIMMessageCellBase.m in Sources */,
+				2CB6017F26A5550800AC196A /* YIMMessageCellRecive.m in Sources */,
+				2C2E26C426A6A3090027EB03 /* DKSKeyboardView.m in Sources */,
 				2C44BA32269EEDF2000DE56E /* YIMMessageResponse_Retract.m in Sources */,
 				2C44BA14269EB608000DE56E /* NSData+YImBytes.m in Sources */,
+				2C2E26C026A6A3090027EB03 /* DKSMoreView.m in Sources */,
 				2C44BA0E269EB4EF000DE56E /* YIMConfig.m in Sources */,
 				2C44BA17269EBB35000DE56E /* YIMMessageBase.m in Sources */,
 				2CA6EA3D26A120A200C78B0C /* YIMMessageResponseBase.m in Sources */,
+				2C2E26C826A6BD410027EB03 /* HttpClientManager.m in Sources */,
+				2CB6018526A57B8100AC196A /* YIMMessageCellSend.m in Sources */,
 				2C44BA1E269EC413000DE56E /* YImMessageText.m in Sources */,
+				2C2E26C126A6A3090027EB03 /* UIView+FrameTool.m in Sources */,
+				2C2E26C326A6A3090027EB03 /* DKSEmojiView.m in Sources */,
 				2C470BF126A00D34009CF52B /* YIMMessageRequestVerity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

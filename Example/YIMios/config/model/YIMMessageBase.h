@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, GCDRECIVEMESSAGE) {
 };
 
 @interface YIMMessageBase : NSObject
-
+@property (nonatomic, strong) NSString * fromUid;
 @end
 
 NS_ASSUME_NONNULL_END

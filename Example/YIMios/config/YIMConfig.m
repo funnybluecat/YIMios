@@ -20,6 +20,8 @@
 #import "YIMMessageBuild.h"
 #import "YImMessageText.h"
 #import "YIMMessageRequestVerity.h"
+static int const Retry_time = 10; // 重连间隔时间
+static int const Retry_count = 10; // 重试次数
 @interface YIMConfig()<GCDAsyncSocketDelegate>
 
 @property (nonatomic, strong) NSString * appkey;
@@ -30,10 +32,15 @@
 @property (nonatomic, strong) NSData * messageHeadData;
 @property (nonatomic, strong) NSMutableData * reciveMessageData;
 
+
+
+
+
 @end
 
 
 @implementation YIMConfig
+
 
 + (YIMConfig *)getInstance{
     static YIMConfig *_instance = nil;
@@ -47,15 +54,45 @@
     self.messageHeadData = [self getMessageHead];
     self.reciveMessageData = [NSMutableData data];
     self.clientSocket = [[GCDAsyncSocket alloc]initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+  
+    
     self.appkey = appId;
     self.secret = secret;
     self.host = host;
     self.port = prot;
 }
 -(void)loginIm:(NSString *)uid{
-    //登录成功后 执行连接
-    UserDefaultSetObjectForKey(@"token",YIM_AUTHORIZATION_KEY);
-    [self connectSocket];
+
+ //localhost:8080/im-server/auth/getToken?appKey=1111&appSecret=33333&uid=token678&nickName=jaha&avatar=3423423
+    
+    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    params[@"appKey"] = self.appkey;
+    params[@"appSecret"] = self.secret;
+    params[@"uid"] =uid;
+    params[@"nickName"] =uid;
+    params[@"avatar"] =uid;
+    
+    
+    [HttpClientManager getAsyn:@"http://ewhyi4.natappfree.cc/im-server/auth/getToken" params:params success:^(id json) {
+       
+        
+        
+        
+        if ([json[@"code"] intValue] ==200) {
+        
+        //登录成功后 执行连接
+        UserDefaultSetObjectForKey(json[@"data"],YIM_AUTHORIZATION_KEY);
+        [self connectSocket];
+        }
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"%@",error);
+        
+    }];
+    
+    
+  
     
 }
 -(void)connectSocket{
@@ -75,11 +112,17 @@
 }
 -(void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err{
     NSLog(@"====>断开连接");
-    [self loginIm:@"dsds"];
+    [self performSelector:@selector(loginIm:) withObject:@"dsds" afterDelay:5.0];
+  
+  //  [self loginIm:@"dsds"];
 }
 -(void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag{
     NSLog(@"====>写入成功,是否连接失败:====>%d",self.clientSocket.isDisconnected);
-    [self.clientSocket readDataWithTimeout:-1 tag:100];
+    
+    
+    [self.clientSocket readDataToLength:24 withTimeout:-1 tag:1];
+    
+  //  [self.clientSocket readDataWithTimeout:-1 tag:100];
     
 }
 -(void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
@@ -92,7 +135,39 @@
     // messageType
     //lenth
     //messageBody
-    [self dealReviceMessageData:data];
+    
+    
+   
+    
+    
+ 
+    
+    NSData * bodyLengthData =   [data subdataWithRange:NSMakeRange(20, 4)];
+    int length =  [NSData intFromData:bodyLengthData];
+    
+    if (tag ==1) {
+        [self.reciveMessageData appendData:data];
+        
+        
+        [self.clientSocket readDataToLength:length withTimeout:-1 tag:2];
+        
+    }else{
+        [self.reciveMessageData appendData:data];
+        
+        [self dealReviceMessageData:[NSData dataWithData:self.reciveMessageData]];
+         
+         
+      
+        
+        [self.clientSocket readDataToLength:24 withTimeout:-1 tag:1];
+        
+    }
+    
+    
+    
+    
+    
+  
   
     [self.clientSocket readDataWithTimeout:-1 tag:100];
     
@@ -106,6 +181,8 @@
     
     // 处理消息
     //获取消息类型
+    
+    self.reciveMessageData = [NSMutableData data];
     
     NSData * chatTypeData =   [reciveMessageData subdataWithRange:NSMakeRange(12, 4)];
     
@@ -126,18 +203,13 @@
                 [self.delegate LogOutByService];
             }
         }
-        YIMMessageResponseCustome *  dsadasdsa =     [YIMMessageResponseCustome mj_objectWithKeyValues:messageStrJson];
-
-        if (self.delegate) {
-            
-         
-            [self.delegate reciveNewMessage:dsadasdsa];
-        }
-
         
     }else{
         // 普通回调消息
         YIMMessageResponseCustome *  message =     [YIMMessageResponseCustome mj_objectWithKeyValues:messageStrJson];
+        
+    
+        
         if (self.delegate) {
             [self.delegate reciveNewMessage:message];
         }

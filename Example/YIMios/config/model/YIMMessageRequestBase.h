@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) ChatType  chatType;
 @property (nonatomic, assign) MessageType  messageType;
 @property (nonatomic, assign) MessageContentType  messageContentType;
-@property (nonatomic, strong) NSString * fromUid;
+
 @property (nonatomic, strong) NSString * fromAvatar;
 @property (nonatomic, strong) NSString * fromNickName;
 

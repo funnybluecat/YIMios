@@ -15,11 +15,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //@"server.natappfree.cc"
     
-    [[YIMConfig getInstance] initWithAppKey:@"sss" secret:@"eee" host:@"server.natappfree.cc" prot:35672];
+    [[YIMConfig getInstance] initWithAppKey:@"1111" secret:@"33333" host:@"server.natappfree.cc" prot:46144];
     
-    [[YIMConfig getInstance] setDelegate:self];
-    
+   
     
     // Override point for customization after application launch.
     return YES;
@@ -52,16 +52,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)LogOutByService {
-    
-}
 
-- (void)LoginCallBack:(NSInteger)code message:(nonnull NSString *)status {
-    
-}
-
-- (void)reciveNewMessage:(nonnull YIMMessageResponseCustome *)message {
-    NSLog(@"搜到新消息");
-}
 
 @end

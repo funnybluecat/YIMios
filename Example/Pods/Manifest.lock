@@ -1,14 +1,32 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - CocoaAsyncSocket (7.6.5)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - IQKeyboardManager (6.5.6)
   - Masonry (1.1.0)
   - MJExtension (3.3.0)
   - MJRefresh (3.7.1)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SVProgressHUD (2.2.5)
   - YIMios (1.0.4):
     - CocoaAsyncSocket
     - Masonry
@@ -16,32 +34,38 @@ PODS:
     - MJRefresh
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
   - FBSnapshotTestCase
-  - IQKeyboardManager
+  - SDWebImage
+  - SVProgressHUD
   - YIMios (from `../`)
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
     - CocoaAsyncSocket
     - FBSnapshotTestCase
-    - IQKeyboardManager
     - Masonry
     - MJExtension
     - MJRefresh
+    - SDWebImage
+    - SVProgressHUD
 
 EXTERNAL SOURCES:
   YIMios:
     :path: "../"
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
   MJRefresh: c7f1edbaa1f401810f2dc356de2355f68c78d4ca
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YIMios: 69c6052da94e08f39522320f1be2e11089316c1d
 
-PODFILE CHECKSUM: c0e1b778ee4f0e4f23f7b57f6890c17ccec9e746
+PODFILE CHECKSUM: 61f68c297c021067c066c9843f71d48ad8cd82af
 
 COCOAPODS: 1.10.1

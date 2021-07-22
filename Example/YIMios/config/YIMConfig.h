@@ -9,6 +9,7 @@
 #import "GCDAsyncSocket.h"
 #import "YIMMessageBase.h"
 #import "YIMMessageResponseCustome.h"
+#import "YIMMessageRequestBase.h"
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -21,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)reciveNewMessage:(YIMMessageResponseCustome *) message;
 
-
+-(void)sendNewMessage:(YIMMessageRequestBase *) message;
 
 @end
 

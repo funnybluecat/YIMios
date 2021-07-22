@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YIMMessageResponseCustome : YIMMessageResponseBase
-@property (nonatomic, strong) NSString * fromUid;
+
 @property (nonatomic, strong) NSString * fromAvatar;
 @property (nonatomic, strong) NSString * fromNickName;
 

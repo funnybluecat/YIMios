@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YImMessageText : YIMMessageRequestBase
-@property (nonatomic, strong) NSString * content;
+
 @end
 
 NS_ASSUME_NONNULL_END
